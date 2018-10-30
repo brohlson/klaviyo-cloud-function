@@ -7,6 +7,10 @@
 const axios = require("axios");
 
 exports.klaviyo = (req, res) => {
+  res.header("Content-Type", "application/json");
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+
   let key = req.query.key || req.body.key;
   let email = req.query.email || req.body.email;
   let variant = req.query.variant || req.body.variant;
